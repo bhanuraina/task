@@ -7,3 +7,4 @@ COPY package.json /app/
 RUN npm install
 COPY . /app
 EXPOSE 3000 5858
+CMD ["npm" "start"]
