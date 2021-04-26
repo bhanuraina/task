@@ -1,6 +1,6 @@
 pipeline {
     agent any
-      def app     
+      stages{   
       stage('Clone repository') {               
              
             checkout scm    
@@ -21,6 +21,7 @@ pipeline {
        app.push("latest")        
               }    
        }
+      }
               post {
         always {
             echo 'I will always say Hello again!'
@@ -32,4 +33,4 @@ pipeline {
         }   
     }
            
-        }
+}
