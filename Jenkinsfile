@@ -19,6 +19,7 @@ node {
        app.push("${env.BUILD_NUMBER}")            
        app.push("latest")        
               }    
+       }
               post {
         always {
             echo 'I will always say Hello again!'
@@ -29,5 +30,5 @@ node {
             
         }
     }
-           }
+           
         }
