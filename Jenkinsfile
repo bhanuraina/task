@@ -1,16 +1,14 @@
-pipeline {
-    agent any
-      stages{   
+node{   
 def app
       stage('Clone repository') {               
-             steps{
+             
             checkout scm    
-      }     
+      
       }
       stage('Build image') {         
-       step{
+      
             app = docker.build("bhanuraina/primeapp")    
-       }    
+         
       } 
       stage('Test image') {           
             app.inside {            
@@ -19,14 +17,16 @@ def app
             }    
         }     
        stage('Push image') {
-       step{
+      
         docker.withRegistry('https://registry.hub.docker.com', 'bb2c2f37-3e60-4692-a575-5bbce988bf7d') {            
        app.push("${env.BUILD_NUMBER}")            
        app.push("latest")        
-         }
+      
            }    
        }
       }
+      stage("Send EMail")
+      {
               post {
         always {
             echo 'I will always say Hello again!'
@@ -37,5 +37,5 @@ def app
             
         }   
     }
-           
+      }          
 }
