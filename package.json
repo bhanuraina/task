@@ -1,0 +1,41 @@
+{
+  "name": "task",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000t\u0000a\u0000s\u0000k\u0000\r\u0000 \u0000",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --coverage --coverageDirectory=output/coverage/jest",
+    "start": "node server.js"
+  },
+  "jest": {
+    "coverageReporters": [
+      "text",
+      "cobertura"
+    ],
+    "reporters": [
+      "default",
+      "jest-junit"
+    ]
+  },
+  "jest-junit": {
+    "output": "output/coverage/junit/junit.xml",
+    "usePathForSuiteName": "true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhanuraina/task.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhanuraina/task/issues"
+  },
+  "homepage": "https://github.com/bhanuraina/task#readme",
+  "dependencies": {
+    "jest-junit": "^12.0.0",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "jasmine-reporters": "^2.4.0"
+  }
+}
