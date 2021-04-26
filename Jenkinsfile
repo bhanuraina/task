@@ -21,10 +21,8 @@ def app
         docker.withRegistry('https://registry.hub.docker.com', 'bb2c2f37-3e60-4692-a575-5bbce988bf7d') {            
        app.push("${env.BUILD_NUMBER}")            
        app.push("latest")        
-      
-           }    
-       }
-      }
+            }    
+             }
       stage("Send EMail")
       {
               post {
