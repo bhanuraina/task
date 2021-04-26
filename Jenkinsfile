@@ -1,4 +1,5 @@
-node {    
+pipeline {
+    agent any
       def app     
       stage('Clone repository') {               
              
@@ -28,7 +29,7 @@ node {
                 recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
                 subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
             
-        }
+        }   
     }
            
         }
